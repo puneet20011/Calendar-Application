@@ -1,0 +1,76 @@
+create calendar --name Work --timezone UTC
+use calendar --name Work
+create event "Team Meeting" from 2025-01-15T10:00 to 2025-01-15T11:00
+
+# Duplicate calendar name
+create calendar --name Work --timezone America/New_York
+
+# Invalid timezone format
+create calendar --name Office --timezone New_York/America
+
+use calendar --name Personal
+
+edit calendar --name Archive --property name Updated
+
+edit calendar --name Work --property owner John
+
+create calendar --name Home --timezone America/Los_Angeles
+
+
+create event "Doctor Appointment" from 2025-01-15T10:00 to 2025-01-15T11:00
+
+use calendar --name Work
+
+create event "Client Call" from 01/15/2025T10:00 to 01/15/2025T11:00
+
+# Missing time component
+create event "Project Review" from 2025-01-15 to 2025-01-15T11:00
+
+# Invalid hour value
+create event "Standup" from 2025-01-15T25:00 to 2025-01-15T11:00
+
+# Target calendar does not exist
+copy event "Team Meeting" on 2025-01-15T10:00 --target Planning to 2025-02-15T10:00
+
+# Event does not exist
+copy event "Conference Call" on 2025-01-15T10:00 --target Home to 2025-02-15T10:00
+
+# Duplicate event
+create event "Team Meeting" from 2025-01-15T10:00 to 2025-01-15T11:00
+
+# Start time after end time
+create event "Workshop" from 2025-01-15T11:00 to 2025-01-15T10:00
+
+
+create event "Training" from 2025-01-15T23:00 to 2025-01-16T02:00 repeats MW for 3 times
+
+# Event does not exist
+edit event subject "Presentation" from 2025-01-15T10:00 to 2025-01-15T11:00 with "New Presentation"
+
+edit series start "Daily Standup" from 2025-01-06T09:00 with 2025-01-07T09:00
+
+# Invalid property name
+edit event priority "Team Meeting" from 2025-01-15T10:00 to 2025-01-15T11:00 with high
+
+# Invalid date format
+print events on 01/15/2025
+
+# Missing time component
+show status on 2025-01-15
+
+# Unsupported file format
+export cal calendar.txt
+
+# Missing file extension
+export cal report
+
+# Invalid command
+this is some text that was typed by mistake
+
+crete event "Lunch" from 2025-01-15T10:00 to 2025-01-15T11:00
+
+create event Quarterly Planning from 2025-01-15T10:00 to 2025-01-15T11:00
+
+print events from 2025-01-01T00:00 to 2025-01-31T23:59
+export cal work_calendar.csv
+exit
