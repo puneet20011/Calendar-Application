@@ -1,6 +1,6 @@
 # Calendar Application
 
-A feature-rich calendar management system built with Java Swing that supports multiple calendars, recurring events with flexible patterns, timezone-aware operations, and seamless event copying across calendars.       
+A feature-rich calendar management system built with Java Swing that supports multiple calendars, recurring events with flexible patterns, timezone-aware operations, and seamless event copying across calendars. This was a project that I worked on with my partner.       
 
 ## Table of Contents
 
